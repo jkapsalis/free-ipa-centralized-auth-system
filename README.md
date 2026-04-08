@@ -339,9 +339,7 @@ Please ensure all shell scripts pass `shellcheck` before submitting.
 
 ---
 
-## License
 
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
