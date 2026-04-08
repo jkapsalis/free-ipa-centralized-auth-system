@@ -48,16 +48,16 @@ This project implements a **centralized identity and access management (IAM)** l
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    FreeIPA Server                        │
+│                    FreeIPA Server                       │
 │                                                         │
-│  ┌───────────┐  ┌───────────┐  ┌──────────────────┐   │
-│  │  Kerberos │  │   LDAP    │  │    DNS / NTP      │   │
-│  │    KDC    │  │ Directory │  │   (BIND + ntpd)   │   │
-│  └───────────┘  └───────────┘  └──────────────────┘   │
+│  ┌───────────┐  ┌───────────┐  ┌──────────────────┐     │
+│  │  Kerberos │  │   LDAP    │  │    DNS / NTP     │     │
+│  │    KDC    │  │ Directory │  │   (BIND + ntpd)  │     │
+│  └───────────┘  └───────────┘  └──────────────────┘     │
 │                                                         │
-│  ┌───────────┐  ┌───────────┐  ┌──────────────────┐   │
-│  │  CA (PKI) │  │  HBAC     │  │   Sudo Rules      │   │
-│  └───────────┘  └───────────┘  └──────────────────┘   │
+│  ┌───────────┐  ┌───────────┐  ┌──────────────────┐     │
+│  │  CA (PKI) │  │  HBAC     │  │   Sudo Rules     │     │
+│  └───────────┘  └───────────┘  └──────────────────┘     │
 └───────────────────────┬─────────────────────────────────┘
                         │  SSSD / ipa-client
         ┌───────────────┼───────────────┐
@@ -84,7 +84,7 @@ Before proceeding, ensure the following:
 | DNS | Ability to configure forward/reverse zones |
 | Knowledge | Basic Linux sysadmin and networking concepts |
 
-> ⚠️ **Note:** FreeIPA requires exclusive use of ports 80 and 443. Ensure no web server is running on the target machine before installation.
+>  **Note:** FreeIPA requires exclusive use of ports 80 and 443. Ensure no web server is running on the target machine before installation.
 
 ---
 
@@ -287,15 +287,15 @@ sudo -l -U jdoe
 
 | Feature | Status | Notes |
 |---|---|---|
-| FreeIPA server deployment | ✅ Complete | Single-server topology |
-| Integrated DNS (BIND) | ✅ Complete | Forward/reverse zones configured |
-| Kerberos KDC | ✅ Complete | Realm `EXAMPLE.COM` |
-| LDAP directory | ✅ Complete | 389 Directory Server backend |
-| User & group provisioning | ✅ Complete | Includes role assignments |
-| Host enrollment (SSSD) | ✅ Complete | Tested on 3 client hosts |
-| HBAC policies | ✅ Complete | SSH access restricted by group |
-| Sudo rules | ✅ Complete | Centrally managed via IPA |
-| PKI / CA | ✅ Complete | Dogtag CA issuing host certificates |
+| FreeIPA server deployment | (yes) Complete | Single-server topology |
+| Integrated DNS (BIND) | (yes) Complete | Forward/reverse zones configured |
+| Kerberos KDC | (yes) Complete | Realm `EXAMPLE.COM` |
+| LDAP directory | (yes) Complete | 389 Directory Server backend |
+| User & group provisioning | (yes) Complete | Includes role assignments |
+| Host enrollment (SSSD) | (yes) Complete | Tested on 3 client hosts |
+| HBAC policies | (yes) Complete | SSH access restricted by group |
+| Sudo rules | (yes) Complete | Centrally managed via IPA |
+| PKI / CA | (yes) Complete | Dogtag CA issuing host certificates |
 
 ### Security Considerations
 
